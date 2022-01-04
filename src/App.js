@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {BrowserRouter as Router, Link, Switch, Route, BrowserRouter} from 'react-router-dom';
 
-import Home from './FrontPages/Home/Home';
+import Home from './Pages/FrontPages/Home/Home';
 import Header from './Components/Header/Header';
 
 function App() {
