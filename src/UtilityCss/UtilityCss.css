@@ -4,6 +4,9 @@
 .primary-background{
     background-color: #0078E7 !important;
 }
+.color-gray{
+    color: #7B7B7B;
+}
 
 /* font */
 .poppins-bold{
@@ -12,12 +15,12 @@
 .poppins-boldItalic{
     font-family: PoppinsBoldItalic;
 }
-.poppins-Medium{
+.poppins-medium{
     font-family: PoppinsMedium;
 }
-.poppins-Regular{
+.poppins-regular{
     font-family: PoppinsRegular;
 }
-.poppins-SemiBold{
+.poppins-semiBold{
     font-family: PoppinsSemiBold;
 }
