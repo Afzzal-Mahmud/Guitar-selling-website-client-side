@@ -1,0 +1,23 @@
+.primary-forground{
+    color: #0078E7 !important;
+}
+.primary-background{
+    background-color: #0078E7 !important;
+}
+
+/* font */
+.poppins-bold{
+    font-family: PoppinsBold;
+}
+.poppins-boldItalic{
+    font-family: PoppinsBoldItalic;
+}
+.poppins-Medium{
+    font-family: PoppinsMedium;
+}
+.poppins-Regular{
+    font-family: PoppinsRegular;
+}
+.poppins-SemiBold{
+    font-family: PoppinsSemiBold;
+}
