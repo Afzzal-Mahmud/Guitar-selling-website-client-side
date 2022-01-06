@@ -1,11 +1,27 @@
+/* primary color */
 .primary-forground{
     color: #0078E7 !important;
 }
 .primary-background{
     background-color: #0078E7 !important;
 }
+/* for small text color */
 .color-gray{
-    color: #7B7B7B;
+    color: #7B7B7B !important;
+}
+.color-gray-2{
+    color: #6F6C6D;
+}
+
+/* secondery color */
+.secondery-forground{
+    color: #DB0653 !important;
+}
+.secondery-background{
+    background-color: #DB0653 !important;
+}
+.secondery-black{
+    color: #535050 !important;
 }
 
 /* font */
