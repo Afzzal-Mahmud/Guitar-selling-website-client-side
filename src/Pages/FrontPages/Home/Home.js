@@ -16,6 +16,8 @@ function Home() {
                 </div>
             </div>
             <div className='hero-image'>
+                {/* <img src="https://i.ibb.co/BPRfnkg/guitar-home-removebg-preview.png"/> */}
+                
                 <img src="https://i.ibb.co/87tjLph/guitar-home-removebg-preview.png"/>
             </div>
         </Container>
