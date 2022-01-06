@@ -3,8 +3,12 @@ import Container from "react-bootstrap/Container";
 /* import home style */
 import './Home.css'
 
+/* import about us page to home page */
+import AboutUs from '../AboutUs/AboutUs'
+
 function Home() {
     return(
+        <>
         <Container className='hero-container'>
             <div className='hero-main'>
                 <p className='color-gray poppins-Regular'>EXPART DESIGNER MAKE YOUR GUITAR !</p>
@@ -16,11 +20,13 @@ function Home() {
                 </div>
             </div>
             <div className='hero-image'>
-                {/* <img src="https://i.ibb.co/BPRfnkg/guitar-home-removebg-preview.png"/> */}
-                
                 <img src="https://i.ibb.co/87tjLph/guitar-home-removebg-preview.png"/>
             </div>
         </Container>
+
+        {/* about page */}
+        <AboutUs></AboutUs>
+        </>
     )
 }
 export default Home;

@@ -1,0 +1,47 @@
+.about-us-container{
+    padding: 3em 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.about-us-text p{
+    margin-top: 4em;
+    line-height: 1.7em;
+}
+.about-us-image{
+    display: none;
+}
+
+
+/* responsive design for about us page . I do mobile first design to this */
+
+@media only screen and (min-width: 850px) {
+    .about-us-container{
+        display: flex;
+        justify-content: space-between;
+    }
+
+     .about-us-image{
+         display: block;
+         width: 400px;
+         margin-right: 2.5em;
+     }
+
+     .about-us-text p{
+         max-width: 38ch;
+         font-size: 18.5px;
+        }
+    }
+
+    @media only screen and (min-width: 1198px) {
+        .about-us-container{
+            justify-content: space-evenly;
+        }
+        
+        .about-us-image{
+            width: 450px;
+        }
+        .about-us-text p{
+            font-size: 20px !important;
+           }
+    }
+    
