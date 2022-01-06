@@ -5,6 +5,8 @@ import './Home.css'
 
 /* import about us page to home page */
 import AboutUs from '../AboutUs/AboutUs'
+/* import Unique guitar Collection list on home page */
+import UniqueCollections from "../UniqueCollections.js/UniqueCollections";
 
 function Home() {
     return(
@@ -26,6 +28,9 @@ function Home() {
 
         {/* about page */}
         <AboutUs></AboutUs>
+
+        {/* unique guitar collections list page */}
+        <UniqueCollections></UniqueCollections>
         </>
     )
 }

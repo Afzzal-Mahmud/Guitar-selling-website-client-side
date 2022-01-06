@@ -1,0 +1,44 @@
+[
+    {
+        "uk" : "A1B25",
+        "name" : "Austric Octa",
+        "image" : "https://i.ibb.co/1JFVnqX/Product-2-600x.png",
+        "price" : "350",
+        "description" : "Austric Octa guitar is our most best seller and one of the rear on list"
+    },
+    {
+        "uk" : "A2B256",
+        "name" : "Dragon Merin",
+        "image" : "https://i.ibb.co/R9RKdvs/Product-1-600x.png",
+        "price" : "280",
+        "description" : "Dragon Merin guitar is our most best seller and one of the rear on list"
+    },
+    {
+        "uk" : "A2B596",
+        "name" : "Marvel White",
+        "image" : "https://i.ibb.co/L0FYHfx/Product-3-600x.png",
+        "price" : "390",
+        "description" : "Marvel White guitar is our most best seller and one of the rear on list"
+    },
+    {
+        "uk" : "A7B257",
+        "name" : "Rovar Ultra",
+        "image" : "https://i.ibb.co/8dZZ4d9/Product-4-600x.png",
+        "price" : "410",
+        "description" : "Rovar Ultra guitar is our most best seller and one of the rear on list"
+    },
+    {
+        "uk" : "B1B25",
+        "name" : "Austric Octa",
+        "image" : "https://i.ibb.co/1JFVnqX/Product-2-600x.png",
+        "price" : "350",
+        "description" : "Austric Octa guitar is our most best seller and one of the rear on list"
+    },
+    {
+        "uk" : "K2B351",
+        "name" : "Dragon Merin",
+        "image" : "https://i.ibb.co/R9RKdvs/Product-1-600x.png",
+        "price" : "280",
+        "description" : "Dragon Merin guitar is our most best seller and one of the rear on list"
+    }
+]
