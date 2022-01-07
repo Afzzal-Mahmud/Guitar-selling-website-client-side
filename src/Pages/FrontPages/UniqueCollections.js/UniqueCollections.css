@@ -1,0 +1,37 @@
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr))
+}
+
+.collection-sub-heading{
+    font-size: 24px;
+}
+
+/* the unique Guitar card design done on this file */
+/* start the css process below for uniqueCollections Card */
+
+.card-body{
+    display: flex;
+    justify-content: space-between;
+}
+.card-image{
+    width: 110px;
+}
+.card-content{
+    margin-top: 2em;
+}
+.card-content h4{
+    font-size: 18px;
+}
+.card-content p{
+    max-width: 16ch;
+    margin: 2.5em 0 1.5em 0;
+    line-height: 1.7em;
+}
+.card-content button{
+    height: 40px;
+    width: 112px;
+    color: white;
+    font-size: 15px;
+    border: 1px solid #0078E7;
+}
