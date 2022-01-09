@@ -1,3 +1,4 @@
+import React from "react";
 import Container from "react-bootstrap/Container";
 
 /* import home style */
@@ -7,6 +8,7 @@ import './Home.css'
 import AboutUs from '../AboutUs/AboutUs'
 /* import Unique guitar Collection list on home page */
 import UniqueCollections from "../UniqueCollections.js/UniqueCollections";
+import Review from "../Review/Review";
 
 function Home() {
     return(
@@ -31,6 +33,9 @@ function Home() {
 
         {/* unique guitar collections list page */}
         <UniqueCollections></UniqueCollections>
+
+        {/* Review page */}
+        <Review></Review>
         </>
     )
 }
