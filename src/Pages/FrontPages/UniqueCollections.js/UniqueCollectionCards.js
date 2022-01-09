@@ -1,3 +1,4 @@
+import React from "react";
 function UniqueCollectionCards(props) {
     const {name,image,price,description} = props.guitarObject
     return(
