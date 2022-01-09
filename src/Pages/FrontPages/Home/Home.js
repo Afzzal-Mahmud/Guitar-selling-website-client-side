@@ -9,6 +9,7 @@ import AboutUs from '../AboutUs/AboutUs'
 /* import Unique guitar Collection list on home page */
 import UniqueCollections from "../UniqueCollections.js/UniqueCollections";
 import Review from "../Review/Review";
+import Footer from "../../../Components/Footer/Footer";
 
 function Home() {
     return(
@@ -36,6 +37,9 @@ function Home() {
 
         {/* Review page */}
         <Review></Review>
+
+        {/* Footer */}
+        <Footer></Footer>
         </>
     )
 }
