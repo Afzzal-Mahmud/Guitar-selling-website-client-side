@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Link, Switch, Route, BrowserRouter} from 'react
 
 import Home from './Pages/FrontPages/Home/Home';
 import Header from './Components/Header/Header';
+import Explore from './Pages/Explore/Explore';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Switch>
         <Route exact path='/' component={Home}></Route>
         <Route path='/home' component={Home}></Route>
+        <Route path='/explore' component={Explore}></Route>
       </Switch>
     </Router>
   );

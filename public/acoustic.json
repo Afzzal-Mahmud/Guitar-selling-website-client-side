@@ -1,0 +1,72 @@
+[
+    {
+        "uk" : "R3HD5",
+        "name" : "Rov Auks",
+        "image" : "https://i.ibb.co/7CYGMpq/guitar-1.png",
+        "price" : "250",
+        "description" : "12 string, Acoustic type, Semi electric, Starter pack, 7/8 Size, Left Handed"
+    },
+    {
+        "uk" : "S3HD9",
+        "name" : "Classic Amps",
+        "image" : "https://i.ibb.co/cbD8hKk/guitar-2.png",
+        "price" : "315",
+        "description" : "12 string, Acoustic type, Full electric, Multy effect, all Size, Right Handed"
+    },
+    {
+        "uk" : "D3HD9",
+        "name" : "Tylor Tot",
+        "image" : "https://i.ibb.co/2n92LcT/guitar-3.png",
+        "price" : "285",
+        "description" : "8 string, Classi type, Full electric, Acoustic effect, 1/3 Size, Left Handed"
+    },
+    {
+        "uk" : "U3KD5",
+        "name" : "Gear4 M.R.T",
+        "image" : "https://i.ibb.co/3dqXfp4/guitar-4.png",
+        "price" : "432",
+        "description" : "12 string, Bass type, Semi electric, Radius effect, 7/8 Size, Right Handed"
+    },
+    {
+        "uk" : "K3HD8",
+        "name" : "GunBangla Octa",
+        "image" : "https://i.ibb.co/NNXn71s/guitar-5.png",
+        "price" : "386",
+        "description" : "10 string, Raman type, Full electric, Radius effect, 7/8 Size, Right Handed"
+    },
+    {
+        "uk" : "P3DK5",
+        "name" : "Rovar R.T.X",
+        "image" : "https://i.ibb.co/PtsT9YH/guitar-6.png",
+        "price" : "286",
+        "description" : "12 string, Basic type, Semi electric, Malody effect, 7/8 Size, Right Handed"
+    },
+    {
+        "uk" : "P3GT5",
+        "name" : "Greta Acoustic",
+        "image" : "https://i.ibb.co/DLRdz5r/guitar-7.png",
+        "price" : "265",
+        "description" : "10 string, Raman type, Full electric, Hard Rock effect, 7/8 Size, Right Handed"
+    },
+    {
+        "uk" : "E9DF5",
+        "name" : "Range Hill",
+        "image" : "https://i.ibb.co/VYLtrLj/guitar-8.png",
+        "price" : "254",
+        "description" : "10 string, Acoustic type, Semi electric, Uklily effect, 7/8 Size, Right Handed"
+    },
+    {
+        "uk" : "Y3HF5",
+        "name" : "Rovar Rill",
+        "image" : "https://i.ibb.co/YBqPQ48/guitar-9.png",
+        "price" : "386",
+        "description" : "10 string, Bassy type, Full electric, Google effect, 7/8 Size, Right Handed"
+    },
+    {
+        "uk" : "R9HD5",
+        "name" : "Rov Auks Ultra",
+        "image" : "https://i.ibb.co/7CYGMpq/guitar-1.png",
+        "price" : "295",
+        "description" : "12 string, Acoustic type, Semi electric, Starter pack, 7/8 Size, Left Handed"
+    }
+]

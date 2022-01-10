@@ -6,6 +6,7 @@ import './Header.css'
 
 /* import font */
 import '../../UtilityCss/UtilityCss.css'
+import { Link } from "react-router-dom";
 
 function Header() {
     return(
@@ -18,9 +19,9 @@ function Header() {
   {/* nav item */}
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="ms-auto poppins-regular nav-links">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#explore">Explore</Nav.Link>
-      <Nav.Link href="#contact">Contact Us</Nav.Link>
+      <Nav.Link as={Link} to="/home">Home</Nav.Link>
+      <Nav.Link as={Link} to="/explore">Explore</Nav.Link>
+      <Nav.Link as={Link} to="/contact">Contact Us</Nav.Link>
     </Nav>
     <Nav>
       <Button className='primary-background'>Admin</Button>
