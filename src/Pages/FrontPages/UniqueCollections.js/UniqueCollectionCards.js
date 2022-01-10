@@ -3,7 +3,7 @@ function UniqueCollectionCards(props) {
     const {name,image,price,description} = props.guitarObject
     return(
         <>
-        <div className="card-body">
+        <div className="guitar-card-body">
             <img className="card-image" src={image}/>
 
             <div className="card-content">

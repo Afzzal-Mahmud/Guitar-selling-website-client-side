@@ -10,7 +10,7 @@
 /* the unique Guitar card design done on this file */
 /* start the css process below for uniqueCollections Card */
 
-.card-body{
+.guitar-card-body{
     display: flex;
     justify-content: space-between;
 }
