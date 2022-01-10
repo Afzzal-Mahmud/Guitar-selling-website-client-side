@@ -1,3 +1,38 @@
+.secondery-dark{
+    background-color: #B00442 !important;
+}
+.explore-section{
+    color: white;
+    padding: 1em 0;
+}
+.explore-top-content{
+    padding: 2em 0 3em 0;
+}
 .main-card-col{
-    margin: 2em 0;
+    margin: 1em 0;
+}
+.explore-sub-heading{
+    font-size: 18px;
+    margin-top: 1em;
+}
+/* direct style the bootstrap class */
+.card-body{
+    padding: 3em 1em 2em 1em;
+}
+.main-card-col p{
+    margin: 2.5em 0 1.5em 0;
+    line-height: 1.7em;
+}
+.main-card-col h3{
+    font-size: 22px;
+}
+.main-card-col h4{
+    font-size: 16px;
+}
+.main-card-col button{
+    height: 40px;
+    width: 112px;
+    color: white;
+    font-size: 13px;
+    border: 1px solid #B00442;
 }
