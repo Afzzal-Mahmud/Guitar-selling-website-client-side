@@ -22,10 +22,10 @@ function Header() {
       <Nav.Link as={Link} to="/home">Home</Nav.Link>
       <Nav.Link as={Link} to="/explore">Explore</Nav.Link>
       <Nav.Link as={Link} to="/feedback">Feedback Us</Nav.Link>
-      <Nav.Link as={Link} to="/contact">Contact Us</Nav.Link>
+      <Nav.Link as={Link} to="/login">Log In</Nav.Link>
     </Nav>
     <Nav>
-      <Button className='primary-background'>Admin</Button>
+      <Button className='primary-background poppins-medium'>Admin</Button>
     </Nav>
   </Navbar.Collapse>
   </Container>
