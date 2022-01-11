@@ -5,6 +5,9 @@
     line-height: 1.7em;
     font-size: 1.2em;
 }
+.review-form-main{
+    margin-top: 3em;
+}
 label{
     display: block;
     font-size: 1.2em;
@@ -28,12 +31,12 @@ input,textarea{
 @media only screen and (min-width: 1018px) {
     .review-form-main{
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
     } 
     .form-right{
         display: block;
     }
     .form-right img{
-        margin-top: 3.5em;
+        margin-top: 4.5em;
     }
 }

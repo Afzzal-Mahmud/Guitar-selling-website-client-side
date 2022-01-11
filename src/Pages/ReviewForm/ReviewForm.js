@@ -1,5 +1,6 @@
 import React from "react"
 import Container from "react-bootstrap/Container"
+import ContactUs from "../ContactUs/ContactUs"
 
 /* import css */
 import './ReviewForm.css'
@@ -26,6 +27,8 @@ function ReviewForm() {
                 </div>
             </form>
         </Container>
+            {/* Contact form */}
+            <ContactUs></ContactUs>
         </section>
     )
 }
