@@ -9,6 +9,7 @@ import Home from './Pages/FrontPages/Home/Home';
 import Header from './Components/Header/Header';
 import Explore from './Pages/Explore/Explore';
 import ReviewForm from './Pages/ReviewForm/ReviewForm';
+import NotFound from './Pages/NotFoundPage/NotFound';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/home' component={Home}></Route>
         <Route path='/explore' component={Explore}></Route>
         <Route path='/feedback' component={ReviewForm}></Route>
+        <Route path='/*' component={NotFound}></Route>
       </Switch>
     </Router>
   );
