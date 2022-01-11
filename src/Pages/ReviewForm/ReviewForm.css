@@ -1,0 +1,39 @@
+.user-review-form-section{
+    padding: 2em 0;
+}
+.user-review-form-section p{
+    line-height: 1.7em;
+    font-size: 1.2em;
+}
+label{
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: .3em;
+}
+input,textarea{
+    width: 100%;
+    box-sizing: border-box;
+    padding: .8em;
+    margin-bottom: 1.8em;
+    border: 1px solid gray;
+    border-radius: .3em;
+}
+
+.form-right{
+    display: none;
+}
+
+/* responsive for desktop design. I design Review section mobile first */
+
+@media only screen and (min-width: 1018px) {
+    .review-form-main{
+        display: flex;
+        justify-content: space-around;
+    } 
+    .form-right{
+        display: block;
+    }
+    .form-right img{
+        margin-top: 3.5em;
+    }
+}

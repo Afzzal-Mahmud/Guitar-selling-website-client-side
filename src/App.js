@@ -8,6 +8,7 @@ import {BrowserRouter as Router, Link, Switch, Route, BrowserRouter} from 'react
 import Home from './Pages/FrontPages/Home/Home';
 import Header from './Components/Header/Header';
 import Explore from './Pages/Explore/Explore';
+import ReviewForm from './Pages/ReviewForm/ReviewForm';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route exact path='/' component={Home}></Route>
         <Route path='/home' component={Home}></Route>
         <Route path='/explore' component={Explore}></Route>
+        <Route path='/feedback' component={ReviewForm}></Route>
       </Switch>
     </Router>
   );

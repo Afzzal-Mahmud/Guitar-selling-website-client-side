@@ -21,6 +21,7 @@ function Header() {
     <Nav className="ms-auto poppins-regular nav-links">
       <Nav.Link as={Link} to="/home">Home</Nav.Link>
       <Nav.Link as={Link} to="/explore">Explore</Nav.Link>
+      <Nav.Link as={Link} to="/feedback">Feedback Us</Nav.Link>
       <Nav.Link as={Link} to="/contact">Contact Us</Nav.Link>
     </Nav>
     <Nav>
