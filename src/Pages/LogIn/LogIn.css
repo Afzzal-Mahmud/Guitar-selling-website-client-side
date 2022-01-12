@@ -1,0 +1,36 @@
+.logIn-section{
+    min-height: 100vh;
+    background-color: #f7f7f7;
+}
+.logIn-form-container{
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    background-color: white;
+    min-height: 80vh;
+    border-radius: 3px;
+    padding-bottom: 3em;
+}
+.logIn-form-container img{
+    display: flex;
+    margin: 0 auto;
+    padding-top: 3em;
+}
+.form-main{
+    padding: 0 1.5em;
+}
+.extra-link{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+@media only screen and (max-width: 425px) {
+    .form-main{
+        padding: 0 10px;
+    }
+    .extra-link{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+}
