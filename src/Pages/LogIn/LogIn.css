@@ -23,6 +23,11 @@
     display: flex;
     justify-content: space-around;
 }
+.extra-link button{
+    border: 2px solid gray;
+    padding: 10px 1.5em;
+    background-color: #f7f7f7;
+}
 
 
 @media only screen and (max-width: 425px) {

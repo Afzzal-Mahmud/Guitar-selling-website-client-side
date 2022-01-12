@@ -44,8 +44,9 @@ function LogIn(){
                         {/* </NavLink> */}
                     </form>
                     <div className="extra-link">
-                    <NavLink to="/home">Sign Up With Google</NavLink>
-                    <NavLink to="/home">Register Account</NavLink>
+                    <NavLink to="/register">
+                        <button>Register Account</button>
+                    </NavLink>
                     </div>
                 </div>
             </Container>

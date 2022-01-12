@@ -11,6 +11,7 @@ import Explore from './Pages/Explore/Explore';
 import ReviewForm from './Pages/ReviewForm/ReviewForm';
 import NotFound from './Pages/NotFoundPage/NotFound';
 import LogIn from './Pages/LogIn/LogIn';
+import Register from './Pages/LogIn/Register';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/explore' component={Explore}></Route>
         <Route path='/feedback' component={ReviewForm}></Route>
         <Route path='/login' component={LogIn}></Route>
+        <Route path='/register' component={Register}></Route>
         <Route path='/*' component={NotFound}></Route>
       </Switch>
     </Router>
