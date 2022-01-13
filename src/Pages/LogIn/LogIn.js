@@ -1,20 +1,28 @@
 import React, { useState } from "react";
+/* bootstrap */
 import Container from "react-bootstrap/Container";
+import Spinner from "react-bootstrap/Spinner";
+import Button from "react-bootstrap/Button";
+
 /* import react-hook-form */
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 
 /* import css */
 import "./LogIn.css"
 
 function LogIn(){
-        
+
+    const { logInUser, authError, isLoading}=useAuth()
     /* use react-hook form */
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     /* on submit button click */
     const handleLogInSubmit = data =>{
-        console.log(data)
+        const userEmail = data.email;
+        const userPassword = data.password;
+        logInUser(userEmail,userPassword)
     }
     return(
         <section className="logIn-section">
@@ -25,6 +33,24 @@ function LogIn(){
                     <p className="poppins-regular color-gray-2 text-center">Sign In to your account</p>
 
                     {/* main logIn form */}
+                    {isLoading ? 
+                    
+                    <>
+                       <Button className="spinnar-style" variant="primary" disabled>
+                        <Spinner
+                        as="span"
+                        animation="border"
+                        size="sm"
+                        role="status"
+                        aria-hidden="true"
+                        />
+                        <span className="visually-hidden">Loading...</span>
+                    </Button>
+                    </> 
+                    
+                    :
+                    
+                    <>
                     <form onSubmit={handleSubmit(handleLogInSubmit)} className="form-main">
 
                         <label htmlFor="email">Email</label>
@@ -56,6 +82,10 @@ function LogIn(){
                         }
                         })}placeholder="Password"/>
 
+                        {/* for email,password incorrect or user don't have any account uesr error */}
+                        {
+                                authError && <small className='text-danger'>Your Email or passowrd is incorrect. Or make sure you have an account</small>
+                        }
                         
                         {/* submit button */}
                         <input className="primary-background poppins-bold text-white" type="submit" value={"Log In"}/>
@@ -66,6 +96,7 @@ function LogIn(){
                         <button>Register Account</button>
                     </NavLink>
                     </div>
+                    </>}
                 </div>
             </Container>
         </section>
