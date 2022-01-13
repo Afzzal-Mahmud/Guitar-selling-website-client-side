@@ -23,16 +23,19 @@
     display: flex;
     justify-content: space-around;
 }
-.extra-link button{
-    border: 2px solid gray;
-    padding: 10px 1.5em;
-    background-color: #f7f7f7;
-}
 
 /* spinnar style for center align */
 .spinnar-style{
     display: flex;
     margin: 0 auto;
+}
+
+/* act google signIn and register as link but bouth are button */
+.register-btn,.google-btn{
+    background: white;
+    color: #0078E7;
+    text-decoration: underline;
+    border: 1px solid transparent;
 }
 
 

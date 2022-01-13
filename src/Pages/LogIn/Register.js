@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory, useLocation } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 
 /* import react hook form */
@@ -7,11 +7,10 @@ import { useForm } from "react-hook-form";
 import useAuth from "../../Hooks/useAuth";
 import Spinner from "react-bootstrap/Spinner";
 import Button from "react-bootstrap/Button";
-import { Alert } from "bootstrap";
 
 
 function Register(){
-    const {registerUser, isLoading, authError} = useAuth()
+    const {registerUser, isLoading, authError, signInWithGoogle} = useAuth()
     /* use react-hook form */
     const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -25,6 +24,12 @@ function Register(){
         /* send data for authentication */
         registerUser(newUserEmail,newUserPassword)
         console.log(newUserName,newUserEmail,newUserPassword)
+    }
+    const location = useLocation()
+    const history = useHistory()
+    /* handle google logIn */
+    const handleGoogleLogIn =() =>{
+        signInWithGoogle(location,history)
     }
     return(
         <section className="logIn-section">
@@ -109,7 +114,7 @@ function Register(){
                     </form>}
 
                     <div className="extra-link">
-                    <NavLink to="/home">Sign Up With Google</NavLink>
+                    <button onClick={handleGoogleLogIn} className="google-btn">Sign Up With Google</button>
                     <NavLink to="/login">already have account ?</NavLink>
                     </div>
                 </div>

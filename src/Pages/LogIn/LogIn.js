@@ -98,7 +98,7 @@ function LogIn(){
                     </form>
                     <div className="extra-link">
                     <NavLink to="/register">
-                        <button>Register Account</button>
+                        <button className="register-btn">Register Account</button>
                     </NavLink>
                     </div>
                     </>}
