@@ -29,6 +29,12 @@
     background-color: #f7f7f7;
 }
 
+/* spinnar style for center align */
+.spinnar-style{
+    display: flex;
+    margin: 0 auto;
+}
+
 
 @media only screen and (max-width: 425px) {
     .form-main{

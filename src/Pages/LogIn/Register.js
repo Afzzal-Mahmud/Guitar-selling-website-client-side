@@ -4,21 +4,27 @@ import Container from "react-bootstrap/Container";
 
 /* import react hook form */
 import { useForm } from "react-hook-form";
+import useAuth from "../../Hooks/useAuth";
+import Spinner from "react-bootstrap/Spinner";
+import Button from "react-bootstrap/Button";
+import { Alert } from "bootstrap";
 
 
 function Register(){
+    const {registerUser, isLoading, authError} = useAuth()
     /* use react-hook form */
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     /* on submit button click */
     const handleRegisterSubmit = data =>{
-        // e.preventDefault()
-        if(data.password !== data.password2){
-            alert("your password did not match")
-            return
-        }
-        // alert('working register data')
-        console.log(data)
+        /* grab all data of new user */
+        const newUserName = data.name;
+        const newUserEmail = data.email
+        const newUserPassword = data.password
+
+        /* send data for authentication */
+        registerUser(newUserEmail,newUserPassword)
+        console.log(newUserName,newUserEmail,newUserPassword)
     }
     return(
         <section className="logIn-section">
@@ -28,10 +34,26 @@ function Register(){
                     <h2 className="primary-forground text-center mt-2 poppins-semiBold">Register Account</h2>
                     <p className="poppins-regular color-gray-2 text-center">Please register your account</p>
 
-
-
                     {/* main logIn form */}
-                    <form onSubmit={handleSubmit(handleRegisterSubmit)} className="form-main">
+                    {/* render conditionally based on loading */}
+                    { isLoading ? 
+
+                    <>
+                       <Button className="spinnar-style" variant="primary" disabled>
+                        <Spinner
+                        as="span"
+                        animation="border"
+                        size="sm"
+                        role="status"
+                        aria-hidden="true"
+                        />
+                        <span className="visually-hidden">Loading...</span>
+                    </Button>
+                    </> 
+
+                    :
+
+                        <form onSubmit={handleSubmit(handleRegisterSubmit)} className="form-main">
 
                         {/* name field */}
                         <label htmlFor="name">name</label>
@@ -74,12 +96,18 @@ function Register(){
                         <label htmlFor="password">Confirm password</label>
 
                         <input name="password2" type="password" {...register("password2", { required: true })} placeholder="retype password"/>
-
+                        
+                            {/* for existing uesr error */}
+                            {
+                                authError && <small className='text-danger'>This email is already exist. Create new or Log In</small>
+                            }
+                        
                         
                         {/* submit button */}
                         <input className="primary-background poppins-bold text-white" type="submit" value={"Register"}/>
                         
-                    </form>
+                    </form>}
+
                     <div className="extra-link">
                     <NavLink to="/home">Sign Up With Google</NavLink>
                     <NavLink to="/login">already have account ?</NavLink>
