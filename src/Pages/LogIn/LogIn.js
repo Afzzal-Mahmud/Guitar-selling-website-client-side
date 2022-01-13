@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 
 /* import react-hook-form */
 import { useForm } from "react-hook-form";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory, useLocation } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 
 /* import css */
@@ -18,12 +18,17 @@ function LogIn(){
     /* use react-hook form */
     const { register, handleSubmit, formState: { errors } } = useForm();
 
+    const location = useLocation()
+    const history = useHistory()
+
     /* on submit button click */
     const handleLogInSubmit = data =>{
         const userEmail = data.email;
         const userPassword = data.password;
-        logInUser(userEmail,userPassword)
+        logInUser(userEmail,userPassword,location,history)
     }
+
+
     return(
         <section className="logIn-section">
             <Container style={{padding:"4em"}}>
@@ -49,7 +54,7 @@ function LogIn(){
                     </> 
                     
                     :
-                    
+
                     <>
                     <form onSubmit={handleSubmit(handleLogInSubmit)} className="form-main">
 

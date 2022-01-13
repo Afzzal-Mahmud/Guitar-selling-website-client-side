@@ -47,10 +47,14 @@ const useFirebase = () =>{
     },[])
 
     /* logIn user with email and password */
-    const logInUser = (email,password) =>{
+    const logInUser = (email,password,location,history) =>{
         setIsLoading(true)
         signInWithEmailAndPassword(auth,email,password)
         .then((userCredential) =>{
+            /* this mean where user wants to go */
+            const destination = location?.state?.from || '/';
+            history.replace(destination)
+
             const user = userCredential.user;
             setAuthError('')
             console.log(user)
