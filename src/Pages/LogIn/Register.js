@@ -14,6 +14,9 @@ function Register(){
     /* use react-hook form */
     const { register, handleSubmit, formState: { errors } } = useForm();
 
+    const location = useLocation()
+    const history = useHistory()
+
     /* on submit button click */
     const handleRegisterSubmit = data =>{
         /* grab all data of new user */
@@ -22,11 +25,9 @@ function Register(){
         const newUserPassword = data.password
 
         /* send data for authentication */
-        registerUser(newUserEmail,newUserPassword)
-        console.log(newUserName,newUserEmail,newUserPassword)
+        registerUser(newUserName,newUserEmail,newUserPassword,history)
+        console.log(newUserEmail,newUserPassword)
     }
-    const location = useLocation()
-    const history = useHistory()
     /* handle google logIn */
     const handleGoogleLogIn =() =>{
         signInWithGoogle(location,history)
