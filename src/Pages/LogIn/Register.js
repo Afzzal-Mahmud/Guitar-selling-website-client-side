@@ -1,28 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 
+/* import react hook form */
+import { useForm } from "react-hook-form";
+
+
 function Register(){
-    const [registerData,setRegisterData] = useState({})
-    /* handle onChange of input field */
-    const handleOnChange = e =>{
-        const field = e.target.name;
-        const value = e.target.value;
-        console.log(field,value)
+    /* use react-hook form */
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
-        const newRegisterData = {...registerData}
-        newRegisterData[field] = value;
-
-        setRegisterData(newRegisterData)
-    }
     /* on submit button click */
-    const handleRegisterSubmit = e =>{
-        e.preventDefault()
-        if(registerData.password !== registerData.password2){
+    const handleRegisterSubmit = data =>{
+        // e.preventDefault()
+        if(data.password !== data.password2){
             alert("your password did not match")
             return
         }
-        alert('working register')
+        // alert('working register data')
+        console.log(data)
     }
     return(
         <section className="logIn-section">
@@ -32,23 +28,57 @@ function Register(){
                     <h2 className="primary-forground text-center mt-2 poppins-semiBold">Register Account</h2>
                     <p className="poppins-regular color-gray-2 text-center">Please register your account</p>
 
+
+
                     {/* main logIn form */}
-                    <form onSubmit={handleRegisterSubmit} className="form-main">
+                    <form onSubmit={handleSubmit(handleRegisterSubmit)} className="form-main">
+
+                        {/* name field */}
                         <label htmlFor="name">name</label>
-                        <input name="name" onChange={handleOnChange} type="email" placeholder="User name"/>
 
+                        <input name="name" type="text" {...register("name", { required: true })} placeholder="User name"/>
+
+
+                        {/* email field */}
                         <label htmlFor="email">Email</label>
-                        <input name="email" onChange={handleOnChange} type="email" placeholder="User E-mail"/>
 
+                        {/* hendling email errors */}
+                        {errors.email && (<small className='text-danger'>{errors.email.message}</small>)}
+
+
+                        <input name="email" type="email" {...register("email", { required: 'email field is requird',
+                        pattern : {
+                            value : /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                            message : "invalid email"
+                        }
+                        })} placeholder="User E-mail"/>
+
+                        
+
+                        {/* password validation */}
                         <label htmlFor="password">Password</label>
-                        <input name="password" onChange={handleOnChange} type="password" placeholder="Password"/>
 
+                        {/* hendling password errors */}
+                        {errors.password && (<small className='text-danger'>{errors.password.message}</small>)}
+
+
+                        <input name="password" type="password" {...register("password", { required: 'password field is requird',
+                        pattern : {
+                            value : /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
+                            message : "Minimum eight characters, at least one letter and one number:"
+                        }
+                        })} placeholder="Password"/>
+
+
+                        {/* confirm password field */}
                         <label htmlFor="password">Confirm password</label>
-                        <input name="password2" onChange={handleOnChange} type="password" placeholder="retype password"/>
 
-                        {/* <NavLink to="/home"> */}
+                        <input name="password2" type="password" {...register("password2", { required: true })} placeholder="retype password"/>
+
+                        
+                        {/* submit button */}
                         <input className="primary-background poppins-bold text-white" type="submit" value={"Register"}/>
-                        {/* </NavLink> */}
+                        
                     </form>
                     <div className="extra-link">
                     <NavLink to="/home">Sign Up With Google</NavLink>
