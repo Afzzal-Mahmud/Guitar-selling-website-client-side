@@ -12,10 +12,12 @@ import ReviewForm from './Pages/ReviewForm/ReviewForm';
 import NotFound from './Pages/NotFoundPage/NotFound';
 import LogIn from './Pages/LogIn/LogIn';
 import Register from './Pages/LogIn/Register';
+import AuthProvider from './Context/AuthProvider';
 
 function App() {
   return (
-    <Router>
+    <AuthProvider>
+      <Router>
       <Header></Header>
       <Switch>
         <Route exact path='/' component={Home}></Route>
@@ -27,6 +29,7 @@ function App() {
         <Route path='/*' component={NotFound}></Route>
       </Switch>
     </Router>
+    </AuthProvider>
   );
 }
 
