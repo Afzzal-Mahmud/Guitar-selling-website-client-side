@@ -6,9 +6,13 @@ import './Header.css'
 
 /* import font */
 import '../../UtilityCss/UtilityCss.css'
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+
+/* import firebase system */
+import useAuth from "../../Hooks/useAuth";
 
 function Header() {
+  const {user,logOut} = useAuth()
     return(
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
 
@@ -22,10 +26,20 @@ function Header() {
       <Nav.Link as={Link} to="/home">Home</Nav.Link>
       <Nav.Link as={Link} to="/explore">Explore</Nav.Link>
       <Nav.Link as={Link} to="/feedback">Feedback Us</Nav.Link>
-      <Nav.Link as={Link} to="/login">Log In</Nav.Link>
     </Nav>
+    
+    {/* conditionally rander based on user logIn or logOut */}
+        {
+          user?.email ? 
+          <Button onClick={logOut} className="primary-background poppins-medium">Log Out</Button>
+          :
+          <NavLink to="/login">
+             <Button className="primary-background poppins-medium">Log In</Button>
+          </NavLink>
+        }
+    
     <Nav>
-      <Button className='primary-background poppins-medium'>Admin</Button>
+      <Button className='primary-background poppins-medium ms-2'>Admin</Button>
     </Nav>
   </Navbar.Collapse>
   </Container>
@@ -34,3 +48,5 @@ function Header() {
     )
 }
 export default Header;
+      
+    
