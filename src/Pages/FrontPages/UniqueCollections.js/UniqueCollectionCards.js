@@ -9,7 +9,7 @@ function UniqueCollectionCards(props) {
             <div className="card-content">
                 <h3 className="poppins-semiBold secondery-forground">{name}</h3>
                 <h4 className="poppins-semiBold secondery-black">Rs. {price}</h4>
-                <p>{description}</p>
+                <p>{name}, {description}</p>
                 <button className="primary-background poppins-bold">Buy Now</button>
             </div>
         </div>

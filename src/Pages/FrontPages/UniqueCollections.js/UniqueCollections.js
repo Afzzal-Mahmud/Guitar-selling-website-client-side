@@ -13,7 +13,7 @@ function UniqueCollections() {
     const[uniqueGuitar,setUniqueGuitar] =useState([])
 
     useEffect(() =>{
-        fetch('./uniqueguitar.json')
+        fetch('http://localhost:5000/uniqueguitar')
         .then(Response => Response.json())
         .then(data => {
             setUniqueGuitar(data)
@@ -34,7 +34,7 @@ function UniqueCollections() {
 
         {
                 uniqueGuitar.map(guitarData => <UniqueCollectionCards
-                key={guitarData.uk}
+                key={guitarData._id}
                 guitarObject={guitarData}
                 ></UniqueCollectionCards>)
         }
