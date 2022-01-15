@@ -7,7 +7,7 @@ function Explore() {
     const [acousticGuitar,setAcousticGuitar] = useState([])
 
     useEffect(()=>{
-        fetch('./acoustic.json')
+        fetch('http://localhost:5000/allguitar')
         .then(Response => Response.json())
         .then(data => {
             setAcousticGuitar(data)
@@ -27,7 +27,7 @@ function Explore() {
                 
                     {
                         acousticGuitar.map(guitarData => <ExploreCard
-                        key={guitarData.name}
+                        key={guitarData._id}
                         acousticGuitarObject = {guitarData}
                         ></ExploreCard>)
                     }
