@@ -1,7 +1,7 @@
 import React from "react"
 import Container from "react-bootstrap/Container"
 import ContactUs from "../ContactUs/ContactUs"
-
+import useAuth from "../../Hooks/useAuth";
 /* import react-hook-form */
 import { useForm } from "react-hook-form";
 
@@ -9,11 +9,36 @@ import { useForm } from "react-hook-form";
 import './ReviewForm.css'
 
 function ReviewForm() {
+    const {user} = useAuth()
+    const defaultPhoto = 'https://i.ibb.co/12RSRdT/imagesone.jpg'
+
        /* use react-hook form */
        const { register, handleSubmit, formState: { errors } } = useForm();
-
        const handleReviewSubmit = (data) =>{
-           console.log(data)
+
+           const review = {
+               name : data.name,
+               imgUrl : user?.photoURL ? user.photoURL : defaultPhoto,
+               starCount : data.ratting,
+               description : data.description
+           }
+        //    console.log(review)
+        
+        /* send data to the server */
+        fetch('http://localhost:5000/review',{
+            method : "POST",
+            headers : {
+                'content-type' : 'application/json'
+            },
+            body : JSON.stringify(review)
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if(data.insertedId){
+                    alert('Your review add successfully.See that on Home page')
+                }
+            })
        }
     return(
         <section className="user-review-form-section">
@@ -23,20 +48,6 @@ function ReviewForm() {
             <form onSubmit={handleSubmit(handleReviewSubmit)} className="review-form-main">
                 <div className="form-left-input">
                 
-                    <label className="poppins-medium" htmlFor="key" name="unique-key">Unique Key</label>
-
-                    {/* hendling key errors */}
-                    {errors.key && (<small className='text-danger'>{errors.key.message}</small>)}
-
-
-                    <input type="text" {...register("key", { required: 'Two uppercase letter and max length 5',maxLength: 5,
-                        pattern : {
-                            value : /(?=.*[A-Z])/,
-                            message : "Must contain Two UpperCase letter and max-Length 5"
-                        }
-                    })}/>
-
-
                     <label className="poppins-medium" htmlFor="name" name="name">Name</label>
 
                     {/* hendling name errors */}
@@ -61,7 +72,7 @@ function ReviewForm() {
                     <label className="poppins-medium" htmlFor="description" name="description">Description</label>
 
 
-                    <textarea name="description" htmlFor="description" {...register("name", { required: true })} cols="50" rows="4" placeholder="write at least 100 characters for aprove"></textarea>
+                    <textarea name="description" htmlFor="description" {...register("description", { required: true })} cols="50" rows="4" placeholder="write at least 100 characters for aprove"></textarea>
 
 
                     {/* submit button */}
