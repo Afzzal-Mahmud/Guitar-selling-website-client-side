@@ -14,6 +14,7 @@ import LogIn from './Pages/LogIn/LogIn';
 import Register from './Pages/LogIn/Register';
 import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -23,15 +24,14 @@ function App() {
       <Switch>
         <Route exact path='/' component={Home}></Route>
         <Route path='/home' component={Home}></Route>
+        <Route path='/explore' component={Explore}></Route>
 
         {/* add review and explore section to private route */}
-        <PrivateRoute path='/explore'>
-          <Explore/>
-        </PrivateRoute>
         <PrivateRoute path='/feedback'>
           <ReviewForm/>
         </PrivateRoute>
         
+        <Route path='/dashboard' component={Dashboard}></Route>
         <Route path='/login' component={LogIn}></Route>
         <Route path='/register' component={Register}></Route>
         <Route path='/*' component={NotFound}></Route>
