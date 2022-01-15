@@ -8,14 +8,14 @@ function ReviewCard(props) {
     return(
         <div className="slide-container">
                         <div className="slide-image">
-                        <img src={imgUrl} alt="" />
+                        <img src={imgUrl} alt="person image" />
                         </div>
                         <blockquote>{description}</blockquote>
                         <h3 className="slide-person-name poppins-medium">- {name}</h3>
                         {/* dynamic star components */}
                         <StarRatingComponent
                         name={'ratingStar'}
-                        value={starCount}
+                        value={parseInt(starCount)}
                         starCount={5}/>
                     </div>
     )

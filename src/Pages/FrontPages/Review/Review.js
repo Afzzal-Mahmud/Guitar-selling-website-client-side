@@ -52,7 +52,7 @@ function Review() {
     const [personReview,setPersonReview]=useState([])
 
     useEffect(()=>{
-        fetch('./personreview.json')
+        fetch('http://localhost:5000/allreview')
         .then(Response => Response.json())
         .then(data => {
             console.log(data)
@@ -68,7 +68,7 @@ function Review() {
         <Slider {...settings}>
                 {
                     personReview.map(reviewData => <ReviewCard
-                    key={reviewData.uk}
+                    key={reviewData._id}
                     reviewObject={reviewData}>
                     </ReviewCard>)
                 }
