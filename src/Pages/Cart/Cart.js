@@ -19,6 +19,7 @@ function Cart() {
 
     return(
         <section className="dashboard-product secondery-background">
+            {cartData?.length !==0 ?
             <Container>
                 <h2 className="text-center poppins-semiBold">Your Order</h2>
 
@@ -34,6 +35,9 @@ function Cart() {
                     }
                 </div>
             </Container>
+            :
+            <h1 style={{paddingTop:"5em"}} className="poppins-semiBold text-center">You had no order yet</h1>
+            }
         </section>
     )
 }

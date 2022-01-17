@@ -35,7 +35,8 @@ function Dashboard () {
             </div>
         </Container>
         </section>
-        <section className="dashboard-product secondery-background">
+        {/* add conditional rendaring based on cartData */}
+        {cartData.length >0 && <section className="dashboard-product secondery-background">
             <Container>
                 <h2 className="text-center poppins-semiBold">Your Order</h2>
 
@@ -51,7 +52,7 @@ function Dashboard () {
                     }
                 </div>
             </Container>
-        </section>
+        </section>}
         </>
     )
 }
