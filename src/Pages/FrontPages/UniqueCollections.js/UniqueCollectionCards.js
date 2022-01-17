@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 function UniqueCollectionCards(props) {
     const {user} = useAuth();
@@ -28,7 +28,7 @@ function UniqueCollectionCards(props) {
             .then(data => {
                 console.log(data)
                 if(data.insertedId){
-                    alert('Your product add successfully.See that on Dashboard page')
+                    alert(`${name} guitar added successfully.See that on Dashboard page`)
                 }
             })
     }
@@ -51,7 +51,9 @@ function UniqueCollectionCards(props) {
                 {/* apply condition to see deshboard */}
                 {
                         userEmail ?
-                        <button className="primary-background poppins-semiBold" onClick={handleAddToCart}>Add to Cart</button> 
+                        <NavLink to='/cart'>
+                            <button className="primary-background poppins-semiBold" onClick={handleAddToCart}>Add to Cart</button> 
+                        </NavLink>
                         : 
                         <button className="primary-background poppins-semiBold" onClick={handleLogInRedirect}>Add to Cart</button>
                     }

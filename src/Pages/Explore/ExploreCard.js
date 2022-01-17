@@ -3,7 +3,7 @@ import React from "react";
 /* import bootstrap Card,Col */
 import Card from "react-bootstrap/Card";
 import  Col from "react-bootstrap/Col";
-import { useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 
 /* import css */
@@ -36,7 +36,7 @@ function ExploreCard(props) {
             .then(data => {
                 console.log(data)
                 if(data.insertedId){
-                    alert('Your product add successfully.See that on Dashboard page')
+                    alert(`${name} guitar added successfully.See that on Dashboard page`)
                 }
             })
         
@@ -59,7 +59,9 @@ function ExploreCard(props) {
                     <p className="poppins-regular">{description}</p>
                     {
                         user?.email ?
-                        <button className="secondery-background poppins-semiBold" onClick={handleAddToCart}>Add to Cart</button> 
+                        <NavLink to='/cart'>
+                            <button className="secondery-background poppins-semiBold" onClick={handleAddToCart}>Add to Cart</button> 
+                        </NavLink>
                         : 
                         <button className="secondery-background poppins-semiBold" onClick={handleLogInRedirect}>Add to Cart</button>
                     }
