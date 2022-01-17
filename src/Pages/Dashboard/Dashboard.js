@@ -45,6 +45,8 @@ function Dashboard () {
                         cartData.map(dashboardData => <DashboardCard
                         key={dashboardData._id}
                         cartObject = {dashboardData}
+                        userCart = {cartData}
+                        setUserCart = {setCartData}
                         ></DashboardCard>)
                     }
                 </div>
