@@ -27,8 +27,8 @@ function Dashboard () {
                 <div className="slide-image">
                     <img src="https://i.ibb.co/12RSRdT/imagesone.jpg" alt="userDynamicImage" />
                 </div>
-                <h5 className="poppins-medium">afzzal</h5>
-                <h6 className="poppins-medium">afzzalmahmud@gmail.com</h6>
+                <h5 className="poppins-medium">{user.displayName}</h5>
+                <h6 className="poppins-medium">{user.email}</h6>
                 <p className="poppins-regular">Thanks for joining with us make sure you subscribe our Newsletter for more updated about guitar</p>
 
                 <Button className="primary-background poppins-medium">Newsletter</Button>
