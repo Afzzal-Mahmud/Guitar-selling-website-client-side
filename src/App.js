@@ -32,10 +32,10 @@ function App() {
           <ReviewForm/>
         </PrivateRoute>
         
-        <PrivateRoute path='/cart'>
-          <Cart/>
+        <PrivateRoute path='/dashboard'>
+          <Dashboard/>
         </PrivateRoute>
-        <Route path='/dashboard' component={Dashboard}></Route>
+        <Route path='/cart' component={Cart}></Route>
         <Route path='/login' component={LogIn}></Route>
         <Route path='/register' component={Register}></Route>
         <Route path='/*' component={NotFound}></Route>
