@@ -15,6 +15,7 @@ import Register from './Pages/LogIn/Register';
 import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import Cart from './Pages/Cart/Cart';
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
           <ReviewForm/>
         </PrivateRoute>
         
+        <PrivateRoute path='/cart'>
+          <Cart/>
+        </PrivateRoute>
         <Route path='/dashboard' component={Dashboard}></Route>
         <Route path='/login' component={LogIn}></Route>
         <Route path='/register' component={Register}></Route>
