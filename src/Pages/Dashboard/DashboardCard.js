@@ -5,8 +5,10 @@ function DashboardCard(props) {
     const cartData = props.userCart
 
     const handleDelete = (id) =>{
-        console.log(id)
-        const url = `http://localhost:5000/usercart/${id}`
+        const proceed = window.confirm('Are you sure you want to delete ?')
+
+        if(proceed){
+            const url = `http://localhost:5000/usercart/${id}`
         fetch(url,{
             method : 'DELETE'
         })
@@ -21,6 +23,7 @@ function DashboardCard(props) {
                 props.setUserCart(remainingData)
             }
         })
+        }  
     }
     return(
         <div className="dashboard-card secondery-dark">
