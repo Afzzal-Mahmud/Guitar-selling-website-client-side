@@ -10,6 +10,7 @@ import AboutUs from '../AboutUs/AboutUs'
 import UniqueCollections from "../UniqueCollections.js/UniqueCollections";
 import Review from "../Review/Review";
 import Footer from "../../../Components/Footer/Footer";
+import { NavLink } from "react-router-dom";
 
 function Home() {
     return(
@@ -19,9 +20,14 @@ function Home() {
                 <p className='color-gray poppins-Regular'>EXPART DESIGNER MAKE YOUR GUITAR !</p>
                 <h1 className='poppins-bold hero-title'>Some grate instrument <br /> comes with grate <br /> experience .</h1>
                 <div className="hero-btn poppins-bold">
+                    <NavLink to='/explore'>
                     <button className='primary-background explore-btn'>
                         Explore More</button>
-                    <button>Contact Us</button>
+                    </NavLink>
+
+                    <NavLink to='feedback'>
+                        <button>Contact Us</button>
+                    </NavLink>
                 </div>
             </div>
             <div className='hero-image'>
