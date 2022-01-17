@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import './Dashboard.css'
@@ -31,7 +32,9 @@ function Dashboard () {
                 <h6 className="poppins-medium">{user.email}</h6>
                 <p className="poppins-regular">Thanks for joining with us make sure you subscribe our Newsletter for more updated about guitar</p>
 
-                <Button className="primary-background poppins-medium">Newsletter</Button>
+                <NavLink to='/feedback'>
+                <Button className="primary-background poppins-medium">Give Us Review</Button>
+                </NavLink>
             </div>
         </Container>
         </section>
