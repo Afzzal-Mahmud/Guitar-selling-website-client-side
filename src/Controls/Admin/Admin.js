@@ -14,8 +14,32 @@ function Admin() {
         handleSubmit: handleSubmit2,
       } = useForm();
 
+      /* insert a guitar product on database */
+      
     const handleAddProduct = (data) => {
         console.log(data)
+        const product = {
+            name : data.name,
+            image : data.image,
+            price : data.price,
+            description : data.description
+        }
+     
+     /* send data to the server */
+     fetch('http://localhost:5000/insertguitar',{
+         method : "POST",
+         headers : {
+             'content-type' : 'application/json'
+         },
+         body : JSON.stringify(product)
+         })
+         .then(res => res.json())
+         .then(data => {
+             console.log(data)
+             if(data.insertedId){
+                 alert('Your product add successfully.See that on Explore page')
+             }
+         })
     }
     const handleMakeAdmin = (data) =>{
         console.log(data)
