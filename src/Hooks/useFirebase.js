@@ -26,6 +26,8 @@ const useFirebase = () =>{
             const user = userCredential.user;
             user.name = userName
             setUser(user)
+            /* send user data to the database */
+            saveUser(email,userName,'POST')
             /* send user name to firebase */
             updateProfile(auth.currentUser, {
                 displayName: userName
@@ -52,6 +54,7 @@ const useFirebase = () =>{
         signInWithPopup(auth,googleProvider)
         .then((result) =>{
             const user = result.user;
+            saveUser(user.email,user.displayName,'PUT')
             setAuthError('')
             const destination = location?.state?.from || '/';
             history.replace(destination)
@@ -101,6 +104,17 @@ const useFirebase = () =>{
         }).catch((error) => {
             console.log(error.message)
         }).finally(() => setIsLoading(false))
+    }
+
+    /* send user data to the database */
+    const saveUser = (email,displayName,method) =>{
+        const user = {email,displayName}
+        fetch('http://localhost:5000/users',{
+            method : method,
+            headers : {'content-type' : 'application/json'},
+            body : JSON.stringify(user)
+        })
+        .then()
     }
     return {
         user,

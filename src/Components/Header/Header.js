@@ -27,7 +27,7 @@ function Header() {
       <Nav.Link as={Link} to="/explore">Explore</Nav.Link>
       <Nav.Link as={Link} to="/feedback">Feedback Us</Nav.Link>
       <Nav.Link as={Link} to="/cart">Cart</Nav.Link>
-      <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
+      {user.email && <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>}
     </Nav>
     
     {/* conditionally rander based on user logIn or logOut */}
@@ -41,7 +41,9 @@ function Header() {
         }
     
     <Nav>
+      <NavLink to='/admin'>
       <Button className='primary-background poppins-medium ms-2'>Admin</Button>
+      </NavLink>
     </Nav>
   </Navbar.Collapse>
   </Container>
