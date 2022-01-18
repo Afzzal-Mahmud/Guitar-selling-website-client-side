@@ -55,7 +55,7 @@ function Admin() {
 
 
                     <div className="add-product-panel">
-                        <h2 className="poppins-medium">Add Product</h2>
+                        <h2 className="poppins-medium">Add new product</h2>
                         <form onSubmit={handleSubmit(handleAddProduct)}>
                             <div>
 
@@ -67,6 +67,20 @@ function Admin() {
                                 <input {...register("name", { required: true })} type="text" />
 
 
+                                <label className="poppins-medium" htmlFor="image" name="image">Product Image</label>
+
+                                {/* hendling image errors */}
+                                {errors.image && (<small className='text-danger'>{errors.image.message}</small>)}
+
+                                <input {...register("image", {
+                                    required: 'Product image is requerd',
+                                    pattern: {
+                                        value: /(http|https):/,
+                                        message: "Product image must have http: or https:"
+                                    }
+                                })} type="text" />
+
+                                
                                 <label className="poppins-medium" htmlFor="price" name="price">Product Price</label>
 
                                 {/* hendling ratting errors */}
