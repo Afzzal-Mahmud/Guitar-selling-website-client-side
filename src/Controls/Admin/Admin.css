@@ -1,0 +1,16 @@
+.admin-panel-main{
+    display: flex;
+    justify-content: space-around;
+}
+.make-new-admin-panel img{
+    padding-top: 5em;
+}
+.make-new-admin-panel h2{
+    padding: 1em 0 .5em 0;
+}
+.admin-form-label{
+    margin-top: 1em;
+}
+.add-product-panel h2{
+    margin: 2em 0;
+}
