@@ -2,6 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import { useForm } from "react-hook-form";
 import useAuth from "../../Hooks/useAuth"
+import DeleteProduct from "../DeleteProduct/DeleteProduct";
 import './Admin.css';
 
 function Admin() {
@@ -152,6 +153,9 @@ function Admin() {
 
                 </div>
             </Container>
+ 
+                <DeleteProduct></DeleteProduct>
+                
         </section>
     )
 }
