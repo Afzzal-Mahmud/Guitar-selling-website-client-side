@@ -17,6 +17,9 @@ const useFirebase = () =>{
     /* for error message */
     const [authError,setAuthError] = useState('')
 
+    /* check for admin or not */
+    const [isAdmin,setIsAdmin] = useState(false)
+
 
     /* create user with email and password */
     const registerUser = (userName,email,password,history) => {
@@ -106,6 +109,17 @@ const useFirebase = () =>{
         }).finally(() => setIsLoading(false))
     }
 
+    /* checking user is admin or not and setState based on user */
+        useEffect( () =>{
+            console.log('from admin panel under useEffect')
+            const url = `http://localhost:5000/useradmin/${user.email}`
+            fetch(url)
+            .then(Response => Response.json())
+            .then(data => {
+                setIsAdmin(data.admin)
+            })
+        },[user.email])
+
     /* send user data to the database */
     const saveUser = (email,displayName,method) =>{
         const user = {email,displayName}
@@ -118,6 +132,7 @@ const useFirebase = () =>{
     }
     return {
         user,
+        isAdmin,
         isLoading,
         authError,
         registerUser,
