@@ -17,6 +17,7 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Cart from './Pages/Cart/Cart';
 import Admin from './Controls/Admin/Admin';
+import AdminRoute from './Controls/AdminRoute/AdminRoute';
 
 function App() {
   return (
@@ -39,9 +40,9 @@ function App() {
         <Route path='/cart' component={Cart}></Route>
         <Route path='/login' component={LogIn}></Route>
         <Route path='/register' component={Register}></Route>
-        <PrivateRoute path='/admin'>
+        <AdminRoute path='/admin'>
           <Admin/>
-        </PrivateRoute>
+        </AdminRoute>
         <Route path='/*' component={NotFound}></Route>
       </Switch>
     </Router>
