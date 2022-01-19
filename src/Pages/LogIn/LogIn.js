@@ -80,10 +80,17 @@ function LogIn(){
 
 
                         {/* password field validation */}
-                        <input name="password"  type="password" {...register("password", { required: 'password field is requird',
+                        {/* <input name="password"  type="password" {...register("password", { required: 'password field is requird',
                         pattern : {
                             value : /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
                             message : "Minimum eight characters, at least one letter and one number:"
+                        }
+                        })}placeholder="Password"/> */}
+
+                        <input name="password"  type="password" {...register("password", { required: 'password field is requird',
+                        pattern : {
+                            value : /^.{6,}$/,
+                            message : "password is requird at least 6 character"
                         }
                         })}placeholder="Password"/>
 
