@@ -42,7 +42,23 @@ function Admin() {
          })
     }
     const handleMakeAdmin = (data) =>{
-        console.log(data)
+         /* send data to the server for make admin*/
+         const email = data.email
+         const user = {email}
+     fetch('http://localhost:5000/users/admin',{
+        method : "PUT",
+        headers : {
+            'content-type' : 'application/json'
+        },
+        body : JSON.stringify(user)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.modifiedCount){
+                alert('User added to the admin role')
+            }
+        })
     }
     return (
         <section>
