@@ -12,7 +12,7 @@ import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 
 function Header() {
-  const {user,logOut} = useAuth()
+  const {user,logOut,isAdmin} = useAuth()
     return(
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
 
@@ -40,11 +40,12 @@ function Header() {
           </NavLink>
         }
     
-    <Nav>
+    {/* only admin can see this page */}
+    {isAdmin && <Nav>
       <NavLink to='/admin'>
       <Button className='primary-background poppins-medium admin-btn'>Admin</Button>
       </NavLink>
-    </Nav>
+    </Nav>}
   </Navbar.Collapse>
   </Container>
 
