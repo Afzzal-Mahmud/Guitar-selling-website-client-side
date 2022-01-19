@@ -33,7 +33,7 @@ function Header() {
     {/* conditionally rander based on user logIn or logOut */}
         {
           user?.email ? 
-          <Button onClick={logOut} className="primary-background poppins-medium">Log Out</Button>
+          <Button onClick={logOut} className="primary-background poppins-medium ">Log Out</Button>
           :
           <NavLink to="/login">
              <Button className="primary-background poppins-medium">Log In</Button>
@@ -42,7 +42,7 @@ function Header() {
     
     <Nav>
       <NavLink to='/admin'>
-      <Button className='primary-background poppins-medium ms-2'>Admin</Button>
+      <Button className='primary-background poppins-medium admin-btn'>Admin</Button>
       </NavLink>
     </Nav>
   </Navbar.Collapse>
