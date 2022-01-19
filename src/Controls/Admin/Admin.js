@@ -1,9 +1,11 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import { useForm } from "react-hook-form";
+import useAuth from "../../Hooks/useAuth"
 import './Admin.css';
 
 function Admin() {
+    const {authToken} = useAuth()
     /* use react-hook form */
     const { register, handleSubmit, formState: { errors } } = useForm();
     
@@ -48,6 +50,7 @@ function Admin() {
      fetch('http://localhost:5000/users/admin',{
         method : "PUT",
         headers : {
+            'authorization' : `Bearer ${authToken}`,
             'content-type' : 'application/json'
         },
         body : JSON.stringify(user)
