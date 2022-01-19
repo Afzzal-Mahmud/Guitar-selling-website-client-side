@@ -39,7 +39,9 @@ function App() {
         <Route path='/cart' component={Cart}></Route>
         <Route path='/login' component={LogIn}></Route>
         <Route path='/register' component={Register}></Route>
-        <Route path='/admin' component={Admin}></Route>
+        <PrivateRoute path='/admin'>
+          <Admin/>
+        </PrivateRoute>
         <Route path='/*' component={NotFound}></Route>
       </Switch>
     </Router>
