@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import initializeFirebase from "../Firebase/firebase.init"
 
 /* for creating user */
-import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, updateProfile } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, updateProfile, getIdToken } from "firebase/auth";
 
 /* initialize firebase */
 initializeFirebase()
@@ -19,6 +19,9 @@ const useFirebase = () =>{
 
     /* check for admin or not */
     const [isAdmin,setIsAdmin] = useState(false)
+
+    /* authToken */
+    const [authToken,setAuthToken] = useState('')
 
 
     /* create user with email and password */
@@ -72,6 +75,10 @@ const useFirebase = () =>{
        const unsubscribe = onAuthStateChanged(auth,(user) =>{
             if(user) {
                 setUser(user)
+                getIdToken(user)
+                .then(idToken => {
+                    setAuthToken(idToken)
+                })
             }else{
                 setUser({})
             }
@@ -133,6 +140,7 @@ const useFirebase = () =>{
     return {
         user,
         isAdmin,
+        authToken,
         isLoading,
         authError,
         registerUser,
