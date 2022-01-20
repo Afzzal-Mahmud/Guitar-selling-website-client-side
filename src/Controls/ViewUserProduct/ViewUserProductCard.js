@@ -58,7 +58,9 @@ function ViewUserProductCard(props) {
                 <button className="secondery-background poppins-medium me-2" onClick={() => handleDelete(_id)}>Cancel</button>
                 
                 {status ? 
-                <button className="secondery-background poppins-medium" onClick={() => handleUpdateStatus(email)}>{status}
+                <button className="secondery-background poppins-medium" 
+                /* onClick={() => handleUpdateStatus(email)} */
+                >{status}
                 </button>
                 :
                 <button className="secondery-background poppins-medium">
