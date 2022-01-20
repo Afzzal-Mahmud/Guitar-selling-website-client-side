@@ -11,7 +11,7 @@ function Dashboard () {
     const [cartData,setCartData] = useState([])
 
     useEffect(() =>{
-        const url = `http://localhost:5000/usercart?email=${user.email}`
+        const url = `https://fierce-beyond-84290.herokuapp.com/usercart?email=${user.email}`
         fetch(url)
         .then(Response => Response.json())
         .then(data => {

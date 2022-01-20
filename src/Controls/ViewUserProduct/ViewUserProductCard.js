@@ -8,7 +8,7 @@ function ViewUserProductCard(props) {
         const proceed = window.confirm('Are you sure you want to cancel this user order .This will be no longer see on her user profile?')
 
         if(proceed){
-            const url = `http://localhost:5000/usercart/${id}`
+            const url = `https://fierce-beyond-84290.herokuapp.com/usercart/${id}`
         fetch(url,{
             method : 'DELETE'
         })
@@ -31,7 +31,7 @@ function ViewUserProductCard(props) {
         
     //     if (proceed) {
     //         const email = { userEmail }
-    //         fetch('http://localhost:5000/usercart/updatestatus', {
+    //         fetch('https://fierce-beyond-84290.herokuapp.com/usercart/updatestatus', {
     //             method: "PUT",
     //             headers: {
     //                 'content-type': 'application/json'

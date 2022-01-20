@@ -7,7 +7,7 @@ function ViewUserProduct() {
     const [loadUserOrder,setLoadUserOrder] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/allusercartdata')
+        fetch('https://fierce-beyond-84290.herokuapp.com/allusercartdata')
         .then(Response => Response.json())
         .then(data => {
             setLoadUserOrder(data)

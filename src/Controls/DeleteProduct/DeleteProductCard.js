@@ -11,7 +11,7 @@ function DeleteProductCard(props) {
         const proceed = window.confirm('Are you sure you want to delete ?')
 
         if (proceed) {
-            const url = `http://localhost:5000/deleteproduct/${id}`
+            const url = `https://fierce-beyond-84290.herokuapp.com/deleteproduct/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

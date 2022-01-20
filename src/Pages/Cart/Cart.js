@@ -11,7 +11,7 @@ function Cart() {
     const [cartData, setCartData] = useState([])
     const history = useHistory()
     useEffect(() => {
-        const url = `http://localhost:5000/usercart?email=${user.email}`
+        const url = `https://fierce-beyond-84290.herokuapp.com/usercart?email=${user.email}`
         fetch(url)
             .then(Response => Response.json())
             .then(data => {
@@ -26,7 +26,7 @@ function Cart() {
         if (proceed) {
             const userEmail = user.email
             const email = { userEmail }
-            fetch('http://localhost:5000/usercart/update', {
+            fetch('https://fierce-beyond-84290.herokuapp.com/usercart/update', {
                 method: "PUT",
                 headers: {
                     'content-type': 'application/json'

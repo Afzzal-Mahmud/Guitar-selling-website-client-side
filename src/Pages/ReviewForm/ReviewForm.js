@@ -25,7 +25,7 @@ function ReviewForm() {
         //    console.log(review)
         
         /* send data to the server */
-        fetch('http://localhost:5000/review',{
+        fetch('https://fierce-beyond-84290.herokuapp.com/review',{
             method : "POST",
             headers : {
                 'content-type' : 'application/json'

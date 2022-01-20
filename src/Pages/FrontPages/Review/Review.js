@@ -52,7 +52,7 @@ function Review() {
     const [personReview,setPersonReview]=useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/allreview')
+        fetch('https://fierce-beyond-84290.herokuapp.com/allreview')
         .then(Response => Response.json())
         .then(data => {
             console.log(data)

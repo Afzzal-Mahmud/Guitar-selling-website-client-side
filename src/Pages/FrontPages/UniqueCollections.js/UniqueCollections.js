@@ -13,7 +13,7 @@ function UniqueCollections() {
     const[uniqueGuitar,setUniqueGuitar] =useState([])
 
     useEffect(() =>{
-        fetch('http://localhost:5000/uniqueguitar')
+        fetch('https://fierce-beyond-84290.herokuapp.com/uniqueguitar')
         .then(Response => Response.json())
         .then(data => {
             setUniqueGuitar(data)

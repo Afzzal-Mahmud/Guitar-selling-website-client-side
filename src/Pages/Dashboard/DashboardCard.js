@@ -8,7 +8,7 @@ function DashboardCard(props) {
         const proceed = window.confirm('Are you sure you want to delete ?')
 
         if(proceed){
-            const url = `http://localhost:5000/usercart/${id}`
+            const url = `https://fierce-beyond-84290.herokuapp.com/usercart/${id}`
         fetch(url,{
             method : 'DELETE'
         })

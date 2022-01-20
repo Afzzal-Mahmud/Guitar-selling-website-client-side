@@ -25,7 +25,7 @@ function ExploreCard(props) {
         console.log(orderItem)
 
         /* send product data to the server */
-        fetch('http://localhost:5000/cart',{
+        fetch('https://fierce-beyond-84290.herokuapp.com/cart',{
             method : "POST",
             headers : {
                 'content-type' : 'application/json'

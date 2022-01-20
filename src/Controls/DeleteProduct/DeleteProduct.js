@@ -7,7 +7,7 @@ function DeleteProduct() {
     const [acousticGuitar,setAcousticGuitar] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/allguitar')
+        fetch('https://fierce-beyond-84290.herokuapp.com/allguitar')
         .then(Response => Response.json())
         .then(data => {
             setAcousticGuitar(data)

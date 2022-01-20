@@ -30,7 +30,7 @@ function Admin() {
         }
      
      /* send data to the server */
-     fetch('http://localhost:5000/insertguitar',{
+     fetch('https://fierce-beyond-84290.herokuapp.com/insertguitar',{
          method : "POST",
          headers : {
              'content-type' : 'application/json'
@@ -49,7 +49,7 @@ function Admin() {
          /* send data to the server for make admin*/
          const email = data.email
          const user = {email}
-     fetch('http://localhost:5000/users/admin',{
+     fetch('https://fierce-beyond-84290.herokuapp.com/users/admin',{
         method : "PUT",
         headers : {
             'authorization' : `Bearer ${authToken}`,

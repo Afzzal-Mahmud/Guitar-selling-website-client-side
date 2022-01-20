@@ -119,7 +119,7 @@ const useFirebase = () =>{
     /* checking user is admin or not and setState based on user */
         useEffect( () =>{
             console.log('from admin panel under useEffect')
-            const url = `http://localhost:5000/useradmin/${user.email}`
+            const url = `https://fierce-beyond-84290.herokuapp.com/useradmin/${user.email}`
             fetch(url)
             .then(Response => Response.json())
             .then(data => {
@@ -130,7 +130,7 @@ const useFirebase = () =>{
     /* send user data to the database */
     const saveUser = (email,displayName,method) =>{
         const user = {email,displayName}
-        fetch('http://localhost:5000/users',{
+        fetch('https://fierce-beyond-84290.herokuapp.com/users',{
             method : method,
             headers : {'content-type' : 'application/json'},
             body : JSON.stringify(user)
