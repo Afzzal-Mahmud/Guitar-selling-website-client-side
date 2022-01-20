@@ -1,0 +1,10 @@
+.user-product-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
+}
+.user-title{
+    margin: 3em 0;
+}
+.user-product-card{
+    margin: 2em 0;
+}

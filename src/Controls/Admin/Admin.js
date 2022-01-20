@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import { useForm } from "react-hook-form";
 import useAuth from "../../Hooks/useAuth"
 import DeleteProduct from "../DeleteProduct/DeleteProduct";
+import ViewUserProduct from "../ViewUserProduct/ViewUserProduct";
 import './Admin.css';
 
 function Admin() {
@@ -155,6 +156,8 @@ function Admin() {
             </Container>
  
                 <DeleteProduct></DeleteProduct>
+
+                <ViewUserProduct/>
                 
         </section>
     )
