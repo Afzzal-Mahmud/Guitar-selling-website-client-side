@@ -18,6 +18,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import Cart from './Pages/Cart/Cart';
 import Admin from './Controls/Admin/Admin';
 import AdminRoute from './Controls/AdminRoute/AdminRoute';
+import Confirmation from './Pages/Confirmation/Confirmation';
 
 function App() {
   return (
@@ -36,6 +37,10 @@ function App() {
         
         <PrivateRoute path='/dashboard'>
           <Dashboard/>
+        </PrivateRoute>
+
+        <PrivateRoute path='/confirmation'>
+          <Confirmation/>
         </PrivateRoute>
         <Route path='/cart' component={Cart}></Route>
         <Route path='/login' component={LogIn}></Route>

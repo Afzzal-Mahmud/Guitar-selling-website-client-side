@@ -38,7 +38,7 @@ function Cart() {
                     console.log(data)
                     if (data.modifiedCount) {
                         alert('Your ordar placed successfully Make sure you do not delete your product. Wait for our confirmation')
-                        history.push('/home')
+                        history.push('/confirmation')
                     }
                 })
         }
