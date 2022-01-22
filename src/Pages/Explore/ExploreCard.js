@@ -3,7 +3,7 @@ import React from "react";
 /* import bootstrap Card,Col */
 import Card from "react-bootstrap/Card";
 import  Col from "react-bootstrap/Col";
-import { NavLink, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 
 /* import css */
@@ -13,6 +13,13 @@ function ExploreCard(props) {
     const {user} = useAuth()
     const userEmail = user?.email
     const {name,image,price,description}=props.acousticGuitarObject
+    
+    /* if user are not logIn we redirect to the logIn page */
+    const history = useHistory()
+    
+    const handleLogInRedirect = () =>{
+        history.push('/login')
+    }
 
     const handleAddToCart = () =>{
         const orderItem = {
@@ -37,17 +44,12 @@ function ExploreCard(props) {
                 console.log(data)
                 if(data.insertedId){
                     alert(`${name} guitar added successfully.See that on Dashboard page`)
+                    history.push('/cart')
                 }
             })
         
     }
 
-    /* if user are not logIn we redirect to the logIn page */
-    const history = useHistory()
-
-    const handleLogInRedirect = () =>{
-        history.push('/login')
-    }
     return (
         <Col xs={12} md={4} className="main-card-col">
 
@@ -59,9 +61,7 @@ function ExploreCard(props) {
                     <p className="poppins-regular">{description}</p>
                     {
                         user?.email ?
-                        <NavLink to='/cart'>
                             <button className="secondery-background poppins-semiBold" onClick={handleAddToCart}>Add to Cart</button> 
-                        </NavLink>
                         : 
                         <button className="secondery-background poppins-semiBold" onClick={handleLogInRedirect}>Add to Cart</button>
                     }

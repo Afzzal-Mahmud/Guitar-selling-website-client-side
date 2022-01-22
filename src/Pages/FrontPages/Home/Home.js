@@ -18,7 +18,7 @@ function Home() {
         <Container className='hero-container'>
             <div className='hero-main'>
                 <p className='color-gray poppins-Regular'>EXPART DESIGNER MAKE YOUR GUITAR !</p>
-                <h1 className='poppins-bold hero-title'>Some grate instrument <br /> comes with grate <br /> experience .</h1>
+                <h1 className='poppins-bold hero-title'>Some grate instrument <br className="hide-mobile"/> comes with grate <br className="hide-mobile"/> experience .</h1>
                 <div className="hero-btn poppins-bold">
                     <NavLink to='/explore'>
                     <button className='primary-background explore-btn'>

@@ -1,10 +1,16 @@
 import React from "react";
-import { NavLink, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 function UniqueCollectionCards(props) {
     const {user} = useAuth();
     const userEmail = user.email
     const {name,image,price,description} = props.guitarObject
+
+    /* if user is not logIn redirect to logIn page */
+    const history = useHistory()
+    const handleLogInRedirect = () =>{
+        history.push('/login')
+    }
 
     const handleAddToCart = () =>{
         const orderItem = {
@@ -29,15 +35,11 @@ function UniqueCollectionCards(props) {
                 console.log(data)
                 if(data.insertedId){
                     alert(`${name} guitar added successfully.See that on Dashboard page`)
+                    history.push('/cart')
                 }
             })
     }
 
-    /* if user is not logIn redirect to logIn page */
-    const history = useHistory()
-    const handleLogInRedirect = () =>{
-        history.push('/login')
-    }
     return(
         <>
         <div className="guitar-card-body">
@@ -51,9 +53,7 @@ function UniqueCollectionCards(props) {
                 {/* apply condition to see deshboard */}
                 {
                         userEmail ?
-                        <NavLink to='/cart'>
                             <button className="primary-background poppins-semiBold" onClick={handleAddToCart}>Add to Cart</button> 
-                        </NavLink>
                         : 
                         <button className="primary-background poppins-semiBold" onClick={handleLogInRedirect}>Add to Cart</button>
                     }

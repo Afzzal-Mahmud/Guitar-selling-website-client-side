@@ -41,3 +41,15 @@
     justify-content: center;
     list-style: none;
 }
+
+/* responsive */
+@media only screen and (max-width: 425px) {
+    .slide-container{
+        padding: 0em;
+        margin: 0 1em;
+    }
+    /* direct change the slick slider class */
+    .slick-arrow{
+        display: none !important;
+    }
+}
