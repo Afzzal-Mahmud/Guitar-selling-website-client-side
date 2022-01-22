@@ -1,6 +1,6 @@
 .card-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr))
+    grid-template-columns: repeat(3,1fr)
 }
 
 .collection-sub-heading{
@@ -34,4 +34,18 @@
     color: white;
     font-size: 15px;
     border: 1px solid #0078E7;
+}
+
+@media only screen and (max-width: 998px) {
+   .card-container{
+       grid-template-columns: repeat(2,1fr);
+   } 
+}
+@media only screen and (max-width: 768px) {
+   .card-container{
+       grid-template-columns: repeat(1,1fr);
+   } 
+   .guitar-card-body{
+    justify-content: space-evenly;
+}
 }
